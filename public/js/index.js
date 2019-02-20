@@ -4,12 +4,6 @@ var socket = io();
 // On connect
 socket.on('connect', function () {
     console.log('- CONNECTED TO SERVER -');
-
-    // Emit createMessage       -test-
-    socket.emit('createMessage', {
-        from: 'Skeletons',
-        text: 'Hello text here'
-    });
 });
 
 // On disconnect
