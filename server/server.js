@@ -16,7 +16,22 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
     console.log('- New user connection -');
 
-    // On createMessage     'io.emit' broadcast
+    // Emit for all users
+    socket.emit('newMessage', {
+        from: 'Admin',
+        text: '- welcome to the application -',
+        createdAt: new Date().getTime()
+    });
+
+    // Emit for all other users
+    socket.broadcast.emit('newMessage', {
+        from: 'Admin',
+        text: '- new user has entered that server... -',
+        createdAt: new Date().getTime()
+    });
+
+    // On createMessage, Listen for incoming 'createMessage' emit, then broadcast to all users w/ 'socket.broadcast.emit(newMessage, {})'
+    // using former attributes from 'createMessage' etc.
     socket.on('createMessage', (message) => {
         console.log('createMessage', message);
         io.emit('newMessage', {
@@ -24,6 +39,11 @@ io.on('connection', (socket) => {
             text: message.text,
             createdAt: new Date().getTime()
         });
+        // socket.broadcast.emit('newMessage', {
+        //     from: message.from,
+        //     text: message.text,
+        //     createdAt: new Date().getTime()
+        // });
     });
 
     // On disconnect
