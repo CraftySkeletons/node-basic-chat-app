@@ -23,17 +23,11 @@ io.on('connection', (socket) => {
     // Emit for all other users
     socket.broadcast.emit('newMessage', generateMessage('Admin', '- a new user has connected -'));
 
-    // On createMessage, Listen for incoming 'createMessage' emit, then broadcast to all users w/ 'socket.broadcast.emit(newMessage, {})'
-    // using former injected attributes from 'createMessage' etc.
-    socket.on('createMessage', (message) => {
+    // On createMessage, Listen for incoming 'createMessage' emit, then broadcast to all users w/ 'io.emit(newMessage, generateMessage(...))'
+    socket.on('createMessage', (message, callback) => {
         console.log('createMessage', message);
         io.emit('newMessage', generateMessage(message.from, message.text));
-
-        // socket.broadcast.emit('newMessage', {
-        //     from: message.from,
-        //     text: message.text,
-        //     createdAt: new Date().getTime()
-        // });
+        callback('- server received msg -');
     });
 
     // On disconnect
