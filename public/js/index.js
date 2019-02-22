@@ -13,10 +13,20 @@ socket.on('disconnect', function () {
 
 // On newMessage, creates 'li' to reference '<ol id="messages-list"></ol>' in the 'html' frontend and assigns submitted form values to be rendered
 socket.on('newMessage', function (message) {
-    console.log('- NEW MESSAGE -', message);
     var li = jQuery('<li></li>');
     li.text(`${message.from}: ${message.text}`);
 
+    jQuery('#messages-list').append(li);
+});
+
+// On newLocationMessage, creates 'li' to reference '<ol id="messages-list"></ol>' in the 'html' frontend and generates a link with coords in a new tab
+socket.on('newLocationMessage', function (message) {
+    var li = jQuery('<li></li>');
+    var a = jQuery('<a target="_blank">My Location<a/>');
+
+    li.text(`${message.from}: `);
+    a.attr('href', message.url);
+    li.append(a);
     jQuery('#messages-list').append(li);
 });
 
@@ -29,5 +39,23 @@ jQuery('#message-form').on('submit', function (e) {
         text: jQuery('[name=message]').val()
     }, function () {
         console.log('- message submitted to server -');
+    });
+});
+
+// Emits 'createLocationMessage' when confirmed
+var locationButton = jQuery('#send-location');
+locationButton.on('click', function () {
+    if (!navigator.geolocation) {
+        return alert('- ALERT - Geolocation is not supported by current browser.. -');
+    }
+
+    // Assign the below properties and pass them to the server for referencing position
+    navigator.geolocation.getCurrentPosition(function (position) {
+        socket.emit('createLocationMessage', {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+        });
+    }, function () {
+        alert('- ALERT - Unable to acquire location.. -');
     });
 });
