@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
     // On createMessage, Listen for incoming 'createMessage' emit, then broadcast to all users w/ 'io.emit(newMessage, generateMessage(...))'
     socket.on('createMessage', (message, callback) => {
         io.emit('newMessage', generateMessage(message.from, message.text));
-        callback('- server received msg -');
+        callback();
     });
 
     // On createLocationMessage, Listen for incoming 'createLocationMessage' emit, then broadcast to all users w/ 'io.emit(newLocationMessage, generateMessage(...))'
