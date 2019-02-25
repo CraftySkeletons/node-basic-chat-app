@@ -5,19 +5,33 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>LCS - link -</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
-    <p>Welcome to the chat app</p>
+<body style="background-color:rgb(19, 20, 25);">
+    <!-- Replace <p> with a proper header -->
+    <header>
+        <h1 class="head1">
+            - Laehire Chat Server -
+        </h1>
+    </header>
 
-    <ol id="messages-list"></ol>
+    <ol id="messages-list" style="list-style-type: none;"></ol>
 
-    <form id="message-form">
-        <input name="message" type="text" placeholder="Say something..."/>
-        <button>Send</button>
-    </form>
-    <button id="send-location">Share Location</button>
+    <div style="position: fixed; bottom: 10px; left: 330px; margin-top: 100%; padding: 5px;">
+        <form id="message-form" autocomplete="off">
+            <input name="message" type="text" placeholder="....." onfocus="this.value=''" maxlength="135" style="width: 960px;
+                background-color:rgb(52, 54, 65); border-color:rgb(52, 54, 65); color: black;"/>
+            <button class="sendBtn">S E N D !</button>
+        </form>
+    </div>
 
+    <div>
+        <button id="send-location" class="locationBtn">Enable / Disable ( Coordinates )</button> <!-- Will become a boolean switch for allowing location share -->
+    </div>
+    
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/index.js"></script>

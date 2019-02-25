@@ -25,7 +25,6 @@ io.on('connection', (socket) => {
 
     // On createMessage, Listen for incoming 'createMessage' emit, then broadcast to all users w/ 'io.emit(newMessage, generateMessage(...))'
     socket.on('createMessage', (message, callback) => {
-        console.log('createMessage', message);
         io.emit('newMessage', generateMessage(message.from, message.text));
         callback('- server received msg -');
     });
