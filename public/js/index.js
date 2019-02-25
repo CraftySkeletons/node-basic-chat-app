@@ -13,18 +13,20 @@ socket.on('disconnect', function () {
 
 // On newMessage, creates 'li' to reference '<ol id="messages-list"></ol>' in the 'html' frontend and assigns submitted form values to be rendered
 socket.on('newMessage', function (message) {
+    var formattedTime = moment(message.createdAt).format('( ddd h:mm a )');
     var li = jQuery('<li class="msgStyle1"></li>');
-    li.text(`${message.from}: ${message.text}`);
+    li.text(`${message.from} ${message.text} ${formattedTime}`);
 
     jQuery('#messages-list').append(li);
 });
 
 // On newLocationMessage, creates 'li' to reference '<ol id="messages-list"></ol>' in the 'html' frontend and generates a link with coords in a new tab
 socket.on('newLocationMessage', function (message) {
+    var formattedTime = moment(message.createdAt).format('( ddd h:mm a )');
     var li = jQuery('<li class="msgStyle1"></li>');
-    var a = jQuery('<a target="_blank">[- user coordinates -]<a/>');
+    var a = jQuery('<a target="_blank">- user coordinates -<a/>');
 
-    li.text(`${message.from}: `);
+    li.text(`${message.from} ${formattedTime}: `);
     a.attr('href', message.url);
     li.append(a);
     jQuery('#messages-list').append(li);
@@ -38,7 +40,7 @@ jQuery('#message-form').on('submit', function (e) {
     var messageTextbox = jQuery('[name=message]');
 
     socket.emit('createMessage', {
-        from: 'User',
+        from: 'User:',
         text: messageTextbox.val()
     }, function () {
         messageTextbox.val('');

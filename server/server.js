@@ -18,10 +18,10 @@ io.on('connection', (socket) => {
     console.log('- New user connection -');
 
     // Emit for all users, using 'generateMessage'
-    socket.emit('newMessage', generateMessage('Admin', '- welcome to the application -'));
+    socket.emit('newMessage', generateMessage('Admin:', '- welcome to the application -'));
 
     // Emit for all other users
-    socket.broadcast.emit('newMessage', generateMessage('Admin', '- a new user has connected -'));
+    socket.broadcast.emit('newMessage', generateMessage('Admin:', '- a new user has connected -'));
 
     // On createMessage, Listen for incoming 'createMessage' emit, then broadcast to all users w/ 'io.emit(newMessage, generateMessage(...))'
     socket.on('createMessage', (message, callback) => {
