@@ -21,7 +21,7 @@
 }
 
 .head1 {
-    margin-top: 10px; margin-bottom: 10px; font-family: 'Helvetica'; color: rgb(46, 158, 255);
+    margin-top: 10px; margin-bottom: 10px; font-family: 'Helvetica'; color: rgb(68, 168, 255);
     font-size: x-large; font-weight: lighter; border-style: solid; border-width: 1px; border-radius: 3px;
     padding: 15px; padding-left: 15px; padding-right: 15px; background-color: rgb(22, 30, 51); border-color: rgb(22, 30, 51);
     border-bottom-color: rgb(50, 104, 255); border-bottom-width: 2px; width: 1540px; position: fixed; top: 0px;

@@ -41,9 +41,20 @@
             </div>
         </div>
     
+        <!-- Mustache templates for chat messages to be appended via 'li' -->
+    <script id="message-template" type="text/template">
+        <li class ="msgStyle1">{{from}} {{text}} {{createdAt}}</li>
+    </script>
+
+        <!-- Temporary until merged with normal text messages -->
+    <script id="location-message-template" type="text/template">
+        <li class ="msgStyle1">{{from}} <a href="{{url}}" target="_blank">- user coordinates -</a> {{createdAt}}</li>
+    </script>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/libs/moment.js"></script>
+    <script src="/js/libs/mustache.js"></script>
     <script src="/js/index.js"></script>
 </body>
 
