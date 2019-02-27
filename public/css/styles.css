@@ -7,29 +7,28 @@
     margin-top: 5px; margin-bottom: 5px;
     font-size: small; border-style: solid; border-width: 1px; border-radius: 14px; border-top-right-radius: 200px; border-bottom-right-radius: 50px;
     padding: 6px; padding-left: 15px; padding-right: 10px; background-color: rgb(26, 46, 66); border-color: rgb(22, 30, 51); border-left-color: rgb(255, 180, 82);
-    border-left-width: 1px; width: 79.5%; position: relative; top: 68px; z-index: -1;
+    border-left-width: 1px; width: 79.5%; position: relative; z-index: -1;
 }
 
 .sendBtn {
-    background-color:rgb(22, 30, 51); border-color: rgb(53, 66, 97); color: rgb(59, 167, 255); padding: 5px; padding-right: 10px; margin: 10px;
-    border-style: groove; align-content: center; position: fixed; bottom: 0; margin-top: 100%; width: 230px;
+    background-color:rgb(22, 30, 51); border-color: rgb(53, 66, 97); color: rgb(59, 167, 255); padding: 5px; padding-right: 10px; margin: 5px;
+    border-style: groove; align-content: center; bottom: 0; margin-top: 100%; margin-right: 20px; width: 200px;
 }
 
 .locationBtn {
-    background-color:rgb(22, 30, 51); border-color: rgb(47, 58, 85); color: rgb(59, 167, 255); padding: 5px; padding-right: 10px; margin: 10px;
-    width: 300px; align-content: center; position: fixed; bottom: 0; margin-top: 100%; border-style: groove;
+    background-color:rgb(22, 30, 51); border-color: rgb(47, 58, 85); color: rgb(59, 167, 255); padding: 6px; padding-right: 10px; margin: auto;
+    margin-left: 15px; width: 300px; align-content: center; border-style: groove; position: fixed; bottom: 19px; margin-top: 100%;
 }
 
 .head1 {
     margin-top: 10px; margin-bottom: 10px; font-family: 'Helvetica'; color: rgb(68, 168, 255);
     font-size: x-large; font-weight: lighter; border-style: solid; border-width: 1px; border-radius: 3px;
     padding: 15px; padding-left: 15px; padding-right: 15px; background-color: rgb(22, 30, 51); border-color: rgb(22, 30, 51);
-    border-bottom-color: rgb(50, 104, 255); border-bottom-width: 2px; width: 80.25%; position: fixed; top: 0px;
-    /* position type may have to change for mobile */
+    border-bottom-color: rgb(50, 104, 255); border-bottom-width: 2px; width: 97.5%; top: 0px;
 }
 
 .userListStyle {
-    background-color:rgb(22, 30, 51); border-color: rgb(63, 98, 253); color: rgb(106, 185, 255); padding: 10px; margin: 9px; border-width: 1px;
-    border-radius: 1px; width: 270px; align-content: center; text-align: center; position: fixed; top: 0; left: 82.75%; margin-bottom: 100%; border-style: groove;
-    border-top-left-radius: 10px; border-top-right-radius: 10px; font-size: 16px; font-weight: lighter;
+    background-color:rgb(22, 30, 51); border-color: rgb(63, 98, 253); color: rgb(106, 185, 255); padding: 10px; border-width: 1px;
+    border-radius: 1px; width: 270px; align-content: center; text-align: center; position: top 0 left 82.75%; margin-bottom: 100%; border-style: groove;
+    border-top-left-radius: 10px; border-top-right-radius: 10px; font-size: 16px; font-weight: lighter; float: right; margin-right: 34px;
 }
