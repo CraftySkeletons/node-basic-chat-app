@@ -7,7 +7,7 @@
     margin-top: 5px; margin-bottom: 5px;
     font-size: small; border-style: solid; border-width: 1px; border-radius: 14px; border-top-right-radius: 200px; border-bottom-right-radius: 50px;
     padding: 6px; padding-left: 15px; padding-right: 10px; background-color: rgb(26, 46, 66); border-color: rgb(22, 30, 51); border-left-color: rgb(255, 180, 82);
-    border-left-width: 1px; width: 1480px; position: relative; top: 68px; z-index: -1;
+    border-left-width: 1px; width: 79.5%; position: relative; top: 68px; z-index: -1;
 }
 
 .sendBtn {
@@ -24,12 +24,12 @@
     margin-top: 10px; margin-bottom: 10px; font-family: 'Helvetica'; color: rgb(68, 168, 255);
     font-size: x-large; font-weight: lighter; border-style: solid; border-width: 1px; border-radius: 3px;
     padding: 15px; padding-left: 15px; padding-right: 15px; background-color: rgb(22, 30, 51); border-color: rgb(22, 30, 51);
-    border-bottom-color: rgb(50, 104, 255); border-bottom-width: 2px; width: 1540px; position: fixed; top: 0px;
+    border-bottom-color: rgb(50, 104, 255); border-bottom-width: 2px; width: 80.25%; position: fixed; top: 0px;
     /* position type may have to change for mobile */
 }
 
 .userListStyle {
     background-color:rgb(22, 30, 51); border-color: rgb(63, 98, 253); color: rgb(106, 185, 255); padding: 10px; margin: 9px; border-width: 1px;
-    border-radius: 1px; width: 270px; align-content: center; text-align: center; position: fixed; top: 0; left: 1585px; margin-bottom: 100%; border-style: groove;
+    border-radius: 1px; width: 270px; align-content: center; text-align: center; position: fixed; top: 0; left: 82.75%; margin-bottom: 100%; border-style: groove;
     border-top-left-radius: 10px; border-top-right-radius: 10px; font-size: 16px; font-weight: lighter;
 }
