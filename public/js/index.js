@@ -6,7 +6,7 @@ function scrollToBottom () {
     var messages = jQuery('#messages-list');
     var newMessage = messages.children('li:last-child');
 
-    var elementTop = $(newMessage).offset().top - 100;
+    var elementTop = $(newMessage).offset().top - 220;
     var elementBottom = elementTop + $(newMessage).outerHeight();
         
     var viewportTop = $(window).scrollTop();

@@ -4,8 +4,8 @@
 }
 
 .msgStyle1 {
-    margin-top: 5px; margin-bottom: 70px;
-    font-size: small; border-style: solid; border-width: 1px; border-radius: 14px; border-top-right-radius: 200px; border-bottom-right-radius: 50px;
+    margin-top: 5px; margin-bottom: 60px;
+    font-size: small; border-style: solid; border-width: 1px; border-radius: 14px; border-top-right-radius: 600px; border-bottom-right-radius: 50px;
     padding: 15px; padding-left: 15px; padding-right: 10px; background-color: rgb(26, 46, 66); border-color: rgb(22, 30, 51); border-left-color: rgb(255, 180, 82);
     border-left-width: 1px; width: 79.5%; position: relative; z-index: -1;
 }
