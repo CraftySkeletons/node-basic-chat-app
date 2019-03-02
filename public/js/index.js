@@ -31,7 +31,7 @@ socket.on('disconnect', function () {
 
 // On newMessage, creates 'li' to reference '<ol id="messages-list"></ol>' in the 'html' frontend and assigns submitted form values to be rendered
 socket.on('newMessage', function (message) {
-    var formattedTime = moment(message.createdAt).format('| ddd h:mm a |');
+    var formattedTime = moment(message.createdAt).format('( h:mm a )');
     var template = jQuery('#message-template').html();
     var html = Mustache.render(template, {
         text: message.text,
